@@ -1,0 +1,10 @@
+bitrix
+upload
+.htaccess
+*.log
+.bash_history
+/*.txt
+/*.xml
+/*.dt
+robots.txt
+.idea/
