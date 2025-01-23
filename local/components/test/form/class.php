@@ -48,25 +48,25 @@ class Form extends \CBitrixComponent implements Controllerable
 
             if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                 $this->errorCollection->setError(
-                    new Error("Ошибка валидации email")
+                    new Error(GetMessage('ERROR_VALIDATION_EMAIL'))
                 );
             }
 
             if (!preg_match_all('/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/m', $phone, $matches, PREG_SET_ORDER, 0)) {
                 $this->errorCollection->setError(
-                    new Error("Ошибка валидации номера телефона")
+                    new Error(GetMessage('ERROR_VALIDATION_PHONE'))
                 );
             }
 
             if (strlen($name) < 1) {
                 $this->errorCollection->setError(
-                    new Error("Ошибка валидации имени")
+                    new Error(GetMessage('ERROR_VALIDATION_NAME'))
                 );
             }
 
             if ($blockId < 1) {
                 $this->errorCollection->setError(
-                    new Error("Ошибка валидации входных параметров")
+                    new Error(GetMessage('ERROR_VALIDATION_SYSTEM'))
                 );
             }
 
@@ -84,7 +84,7 @@ class Form extends \CBitrixComponent implements Controllerable
 
             if (!\Bitrix\Main\Loader::includeModule('highloadblock')) {
                 $this->errorCollection->setError(
-                    new Error("Не установлен модуль HighloadBlock")
+                    new Error(GetMessage('ERROR_NOT_FOUND_HL'))
                 );
 
                 return AjaxJson::createError($this->errorCollection);
@@ -96,7 +96,7 @@ class Form extends \CBitrixComponent implements Controllerable
 
             if (!$entity_data_class) {
                 $this->errorCollection->setError(
-                    new Error("HighloadBlock не найден")
+                    new Error(GetMessage('ERROR_NOT_FOUND_HL'))
                 );
 
                 return AjaxJson::createError($this->errorCollection);
@@ -110,7 +110,7 @@ class Form extends \CBitrixComponent implements Controllerable
 
             if($issetItem === true){
                 $this->errorCollection->setError(
-                    new Error("такая почта/телефон уже есть")
+                    new Error(GetMessage('ERROR_ISSET_ITEM'))
                 );
 
                 return AjaxJson::createError($this->errorCollection);
@@ -124,7 +124,7 @@ class Form extends \CBitrixComponent implements Controllerable
 
             if($resultAdd->isSuccess() === false) {
                 $this->errorCollection->setError(
-                    new Error("Ошибка при создании записи в HighloadBlock")
+                    new Error(GetMessage('ERROR_SYSTEM'))
                 );
 
                 return AjaxJson::createError($this->errorCollection);
