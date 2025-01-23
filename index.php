@@ -1,1 +1,20 @@
-<?define("WIZARD_DEFAULT_SITE_ID", "s1");require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/classes/general/wizard.php");$wizard = new CWizard("nsandrey:empty_install");$wizard->Install();require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");?>
+<?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+/**
+ * @var $APPLICATION
+ */
+$APPLICATION->SetTitle("Страница с формой");
+?>
+
+<?php
+$APPLICATION->IncludeComponent(
+	"test:form", 
+	"", 
+	[
+		"BLOCK_ID" => "1",
+	],
+	false
+); ?>
+
+<?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");

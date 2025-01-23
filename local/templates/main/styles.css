@@ -1,0 +1,35 @@
+header {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: end;
+}
+.header__panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.language__panel {
+    display: flex;
+}
+
+.language__panel li {
+    background: #dfdfdc;
+    margin: 0 5px;
+    padding: 3px;
+    list-style: none;
+    font-weight: 600;
+}
+
+.language__panel li a {
+    text-decoration: none;
+    margin: 2px;
+    color: #4a74d3;
+}
+
+.language__panel li a:hover {
+    text-decoration: none;
+    color: #0b379b;
+}

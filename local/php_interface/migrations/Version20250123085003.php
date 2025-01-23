@@ -123,7 +123,7 @@ class Version20250123085003 extends Version
 ));
             $helper->Hlblock()->saveField($hlblockId, array (
   'FIELD_NAME' => 'UF_PHONE',
-  'USER_TYPE_ID' => 'integer',
+  'USER_TYPE_ID' => 'string',
   'XML_ID' => '',
   'SORT' => '100',
   'MULTIPLE' => 'N',

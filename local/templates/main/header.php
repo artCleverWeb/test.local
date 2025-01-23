@@ -15,5 +15,13 @@
     $APPLICATION->ShowCSS();
     ?>
 </head>
-    <body>
-        <?php $APPLICATION->ShowPanel(); ?>
+<body>
+<?php $APPLICATION->ShowPanel(); ?>
+<header>
+    <div class="header__panel">
+        <ul class="language__panel">
+            <li><a href="/?lang=ru">RU</a></li>
+            <li><a href="/?lang=en">EN</a></li>
+        </ul>
+    </div>
+</header>
